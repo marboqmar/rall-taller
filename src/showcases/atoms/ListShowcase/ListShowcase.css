@@ -1,0 +1,3 @@
+.list.list-showcase__list-counter {
+  counter-reset: list-counter 7;
+}

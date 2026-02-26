@@ -1,0 +1,14 @@
+/* Ensures all rows are equal height */
+.card-grid {
+  grid-auto-rows: 1fr;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure cards occupy the whole height available */
+.card-wrapper > * {
+  flex-grow: 1;
+}

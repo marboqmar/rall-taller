@@ -1,0 +1,33 @@
+p,
+.paragraph {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-family: var(--paragraph-font-family);
+  font-size: var(--paragraph-font-size);
+  font-weight: var(--paragraph-font-weight);
+  line-height: var(--paragraph-line-height);
+  color: var(--paragraph);
+}
+
+/* Font size */
+.paragraph--font-size-sm {
+  font-size: var(--paragraph-font-size-sm);
+}
+
+.paragraph--font-size-lg {
+  font-size: var(--paragraph-font-size-lg);
+}
+
+/* Font weight */
+.paragraph--font-weight-semibold {
+  font-weight: var(--paragraph-font-weight-semibold);
+}
+
+.paragraph--font-weight-bold {
+  font-weight: var(--paragraph-font-weight-bold);
+}
+
+/* Inverted color */
+.paragraph--color-inverted {
+  color: var(--paragraph-inverted);
+}

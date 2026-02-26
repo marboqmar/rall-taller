@@ -1,0 +1,386 @@
+/* ==========================================================================
+   1. PRIMITIVES
+   ========================================================================== */
+:root {
+  /* Primary */
+  --color-primary-200: #c2b8ff;
+  --color-primary-300: #9b8afb;
+  --color-primary-400: #7a5af8;
+  --color-primary-500: #6938ef;
+  --color-primary-600: #5925dc;
+  --color-primary-700: #4a1fb8;
+  --color-primary-800: #3e1c96;
+  --color-primary-900: #250674;
+  --color-primary-600-a10: rgba(89, 37, 220, 0.1);
+  --color-primary-600-a20: rgba(89, 37, 220, 0.2);
+  --color-primary-600-a30: rgba(89, 37, 220, 0.3);
+
+  /* Secondary */
+  --color-secondary-600: #9e165f;
+  --color-secondary-600-500: #c11574;
+  --color-secondary-600-400: #df0c81;
+  --color-secondary-600-300: #f30287;
+  --color-secondary-600-700: #851651;
+  --color-secondary-600-800: #740d44;
+  --color-secondary-600-900: #5f0033;
+
+  /* Neutral */
+  --color-neutral: #1f425e;
+
+  /* White */
+  --color-white: #fdfdfd;
+
+  /* Black */
+  --color-black: #1a1d20;
+
+  /* Gray */
+  --color-gray-50: #f5f5f5;
+  --color-gray-100: #e9eaeb;
+  --color-gray-200: #d5d7da;
+  --color-gray-300: #a4a7ae;
+  --color-gray-400: #717680;
+  --color-gray-500: #535862;
+  --color-gray-600: #414651;
+  --color-gray-700: #373e4c;
+  --color-gray-800: #252b37;
+  --color-gray-900: #101828;
+  --color-gray-600-a60: rgba(65, 70, 81, 0.6);
+
+  /* Alerts - info */
+  --color-info: #2e90fa;
+  --color-info-a10: rgba(46, 144, 250, 0.1);
+  --color-info-a20: rgba(46, 144, 250, 0.2);
+
+  /* Alerts - success */
+  --color-success: #12b76a;
+  --color-success-a10: rgba(18, 183, 106, 0.1);
+  --color-success-a20: rgba(18, 183, 106, 0.2);
+
+  /* Alerts - warning */
+  --color-warning: #f79009;
+  --color-warning-a10: rgba(247, 144, 9, 0.1);
+  --color-warning-a20: rgba(247, 144, 9, 0.2);
+
+  /* Alerts - error */
+  --color-error: #dd2214;
+  --color-error-light: #f0665c;
+  --color-error-a10: rgba(240, 68, 56, 0.1);
+  --color-error-a20: rgba(240, 68, 56, 0.2);
+}
+
+/* ==========================================================================
+   2. SEMANTIC TOKENS
+   ========================================================================== */
+:root {
+  /* Text */
+  --text-main: var(--color-black);
+  --text-inverted: var(--color-white);
+  --text-placeholder: var(--color-gray-400);
+
+  /* Border */
+  --border-main: var(--color-primary-600);
+
+  /* Background */
+  --page-bg: var(--color-white);
+
+  /* Surface */
+  --surface-main: var(--color-primary-600-a20);
+  --surface-solid: var(--color-primary-200);
+
+  /* Hover */
+  --hover-primary: var(--color-primary-600);
+
+  /* Focus */
+  --focus-spacer: var(--page-bg);
+  --focus-ring: var(--color-primary-700);
+  --focus-glow: var(--color-primary-500);
+
+  /* Disabled */
+  --disabled-text: var(--color-gray-400);
+  --disabled-bg: var(--color-gray-100);
+  --disabled-hover-bg: var(--color-gray-200);
+  --disabled-border-color: var(--color-gray-300);
+
+  /* Alerts - info */
+  --info-text: var(--color-info);
+  --info-icon: var(--color-info);
+  --info-border-color: var(--color-info);
+  --info-bg: var(--color-info-a10);
+
+  /* Alerts - success */
+  --success-text: var(--color-success);
+  --success-icon: var(--color-success);
+  --success-border-color: var(--color-success);
+  --success-bg: var(--color-success-a10);
+
+  /* Alerts - warning */
+  --warning-text: var(--color-warning);
+  --warning-icon: var(--color-warning);
+  --warning-border-color: var(--color-warning);
+  --warning-bg: var(--color-warning-a10);
+
+  /* Alerts - error */
+  --error-text: var(--color-error);
+  --error-icon: var(--color-error);
+  --error-border-color: var(--color-error);
+  --error-bg: var(--color-error-a10);
+
+  /* Control */
+  --control-text: var(--text-main);
+  --control-text-placeholder: var(--text-placeholder);
+  --control-bg: var(--page-bg);
+  --control-bg-checked: var(--color-primary-600);
+  --control-error-bg: var(--error-bg);
+  --control-error-border-color: var(--error-border-color);
+  --control-disabled-text: var(--disabled-text);
+  --control-disabled-bg: var(--disabled-bg);
+}
+
+/* ==========================================================================
+   3. COMPONENT TOKENS
+   ========================================================================== */
+:root {
+  /* --- ATOMS --- */
+  /* Backdrop */
+  --backdrop-bg: var(--color-gray-600-a60);
+
+  /* Button - primary */
+  --button-primary-text: var(--text-inverted);
+  --button-primary-bg: var(--color-primary-600);
+  --button-primary-hover-bg: var(--color-primary-800);
+  --button-primary-border: var(--color-primary-600);
+
+  /* Button -secondary */
+  --button-secondary-text: var(--text-inverted);
+  --button-secondary-bg: var(--color-secondary-600);
+  --button-secondary-hover-bg: var(--color-secondary-600-700);
+  --button-secondary-border: var(--color-secondary-600);
+
+  /* Button - tertiary */
+  --button-tertiary-text: var(--color-primary-800);
+  --button-tertiary-bg: transparent;
+  --button-tertiary-hover-text: var(--text-inverted);
+  --button-tertiary-hover-bg: var(--color-primary-400);
+
+  /* Button - transparent */
+  --button-transparent-text: var(--text-main);
+
+  /* Button - link */
+  --button-link-text: var(--text-main);
+  --button-link-hover: var(--hover-primary);
+
+  /* Button - disabled */
+  --button-disabled-text: var(--disabled-text);
+  --button-disabled-bg: var(--disabled-bg);
+  --button-disabled-hover-bg: var(--disabled-hover-bg);
+
+  /* Checkbox */
+  --checkbox-icon: var(--page-bg);
+  --checkbox-disabled-icon: var(--disabled-text);
+
+  /* Code */
+  --code-bg: var(--color-gray-100);
+
+  /* Form fieldset */
+  --form-fieldset-legend: var(--text-main);
+  --form-fieldset-error-text: var(--error-text);
+
+  /* Heading */
+  --heading: var(--text-main);
+  --heading-h1: var(--text-main);
+  --heading-h2: var(--color-secondary-600);
+  --heading-h3: var(--color-secondary-600-900);
+
+  /* Helper text */
+  --helper-text-text: var(--color-gray-600);
+  --helper-text-error-text: var(--error-text);
+  --helper-text-error-icon: var(--error-icon);
+
+  /* Input */
+  --input-icon: var(--text-main);
+
+  /* Label */
+  --label-required: var(--error-text);
+
+  /* List */
+  --list-marker: var(--color-primary-600);
+
+  /* Paragraph */
+  --paragraph: var(--text-main);
+  --paragraph-inverted: var(--text-inverted);
+
+  /* Table */
+  --table-header: var(--color-primary-600-a20);
+  --table-row: var(--color-primary-600-a10);
+
+  /* --- MOLECULES --- */
+  /* Accordion item */
+  --accortion-item-heading: var(--text-main);
+  --accordion-item-icon: var(--text-main);
+  --accordion-item-separator: var(--color-primary-600-a10);
+
+  /* Breadbrumbs */
+  --breadcrumbs-text: var(--text-main);
+  --breadcrumbs-link-hover: var(--hover-primary);
+
+  /* CTA */
+  --cta-heading: var(--text-main);
+  --cta-bg: var(--surface-main);
+
+  /* Form */
+  --form-error-text: var(--error-text);
+
+  /* Media object */
+  --media-object-heading: var(--text-main);
+
+  /* Mobile menu */
+  --mobile-menu-bg: var(--surface-solid);
+
+  /* Search box */
+  --search-box-bg: var(--page-bg);
+  --search-box-icon: var(--text-main);
+
+  /* Status message - info */
+  --status-message-info-text: var(--info-text);
+  --status-message-info-icon: var(--info-icon);
+  --status-message-info-bg: var(--info-bg);
+  --status-message-info-border-color: var(--info-border-color);
+
+  /* Status message - success */
+  --status-message-success-text: var(--success-text);
+  --status-message-success-icon: var(--success-icon);
+  --status-message-success-bg: var(--success-bg);
+  --status-message-success-border-color: var(--success-border-color);
+
+  /* Status message - warning */
+  --status-message-warning-text: var(--warning-text);
+  --status-message-warning-icon: var(--warning-icon);
+  --status-message-warning-bg: var(--warning-bg);
+  --status-message-warning-border-color: var(--warning-border-color);
+
+  /* Status message - error */
+  --status-message-error-text: var(--error-text);
+  --status-message-error-icon: var(--error-icon);
+  --status-message-error-bg: var(--error-bg);
+  --status-message-error-border-color: var(--error-border-color);
+
+  /* ORGANISMS */
+  /* Card */
+  --card-heading: var(--text-main);
+  --card-bg: transparent;
+
+  /* Footer */
+  --footer-bg: var(--page-bg);
+  --footer-logo-text: var(--text-main);
+  --footer-icon-hover: var(--hover-primary);
+
+  /* Header */
+  --header-bg: var(--page-bg);
+  --header-logo-text: var(--text-main);
+  --header-icon-hover: var(--hover-primary);
+
+  /* Hero */
+  --hero-heading: var(--text-main);
+
+  /* Modal */
+  --modal-bg: var(--color-gray-100);
+  --modal-heading: var(--text-main);
+}
+
+/* ==========================================================================
+   4. DARK THEME TOKENS
+   ========================================================================== */
+/* Dark theme */
+[data-theme="dark"] {
+  /* --- SEMANTIC --- */
+  /* Text */
+  --text-main: var(--color-white);
+  --text-inverted: var(--color-black);
+  --text-placeholder: var(--color-gray-300);
+
+  /* Border */
+  --border-main: var(--color-primary-300);
+
+  /* Background */
+  --page-bg: var(--color-gray-800);
+
+  /* Surface */
+  --surface-main: var(--color-primary-600-a30);
+  --surface-solid: var(--color-primary-800);
+
+  /* Hover */
+  --hover-primary: var(--color-primary-300);
+
+  /* Focus */
+  --focus-ring: var(--color-primary-500);
+  --focus-glow: var(--color-primary-500);
+
+  /* Disabled */
+  --disabled-text: var(--color-gray-200);
+  --disabled-bg: var(--color-gray-600);
+  --disabled-hover-bg: var(--color-gray-700);
+
+  /* Alerts - info */
+  --info-bg: var(--color-info-a20);
+
+  /* Alerts - success */
+  --success-bg: var(--color-success-a20);
+
+  /* Alerts - warning */
+  --warning-bg: var(--color-warning-a20);
+
+  /* Alerts - error */
+  --error-text: var(--color-error-light);
+  --error-icon: var(--color-error-light);
+  --error-border-color: var(--color-error-light);
+  --error-bg: var(--color-error-a20);
+
+  /* Control */
+  --control-bg: var(--page-bg);
+  --control-bg-checked: var(--color-primary-300);
+
+  /* --- COMPONENT TOKENS --- */
+  /* ATOMS */
+  /* Button - primary */
+  --button-primary-text: var(--text-main);
+  --button-primary-bg: var(--color-primary-700);
+  --button-primary-hover-bg: var(--color-primary-800);
+
+  /* Button - secondary */
+  --button-secondary-text: var(--text-main);
+  --button-secondary-bg: var(--color-secondary-600-700);
+  --button-secondary-hover-bg: var(--color-secondary-600-800);
+
+  /* Button - tertiary */
+  --button-tertiary-text: var(--text-main);
+  --button-tertiary-hover-text: var(--text-main);
+  --button-tertiary-hover-bg: var(--color-primary-600);
+
+  /* Checkbox */
+  --checkbox-icon: var(--page-bg);
+
+  /* Code */
+  --code-bg: var(--color-gray-600);
+
+  /* Heading */
+  --heading-h2: var(--color-secondary-600-300);
+  --heading-h3: var(--color-secondary-600-400);
+
+  /* Helper text */
+  --helper-text-text: var(--color-gray-300);
+
+  /* List */
+  --list-marker: var(--color-primary-300);
+
+  /* Table */
+  --table-header: var(--color-primary-800);
+  --table-row: var(--color-primary-600-a20);
+
+  /* --- MOLECULES --- */
+  /* Accordion item */
+  --accordion-item-separator: var(--color-primary-700);
+
+  /* ORGANISMS */
+  /* Modal */
+  --modal-bg: var(--color-gray-900);
+}

@@ -1,0 +1,92 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--hero-gap);
+  padding: var(--hero-padding);
+}
+
+.hero__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-spacing-content);
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-spacing-text);
+  align-items: center;
+  text-align: center;
+}
+
+.hero__heading {
+  color: var(--hero-heading);
+}
+
+.hero__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-spacing-actions);
+  flex-shrink: 0;
+}
+
+.hero__button {
+  width: 100%;
+}
+
+.hero__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Ensure image fills its container */
+.hero__media .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero--media-up {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .hero--media-right {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hero--media-left {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .hero__wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero--media-left .hero__media,
+  .hero--media-right .hero__media,
+  .hero--media-left .hero__wrapper,
+  .hero--media-right .hero__wrapper {
+    flex: 1; /* This ensures they take up 50/50 space */
+  }
+
+  .hero--media-left .hero__text,
+  .hero--media-right .hero__text {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero__button-wrapper {
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+  }
+}

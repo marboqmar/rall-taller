@@ -1,0 +1,15 @@
+/* Extra class needed for specificity over icon atom fill */
+.footer__social-media-link[aria-label*="Instagram"]:focus-visible .footer__social-media-icon,
+.footer__social-media-link[aria-label*="Instagram"]:hover .footer__social-media-icon {
+  fill: #ff0069;
+}
+
+.footer__social-media-link[aria-label*="Facebook"]:focus-visible .footer__social-media-icon,
+.footer__social-media-link[aria-label*="Facebook"]:hover .footer__social-media-icon {
+  fill: #0866ff;
+}
+
+.footer__social-media-link[aria-label*="YouTube"]:focus-visible .footer__social-media-icon,
+.footer__social-media-link[aria-label*="YouTube"]:hover .footer__social-media-icon {
+  fill: #ff0000;
+}

@@ -1,0 +1,60 @@
+.header {
+  position: relative;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+  background-color: var(--header-bg);
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Extra class needed for specificity over icon atom icon size */
+.header .header__logo-icon {
+  width: var(--header-logo-size);
+  height: var(--header-logo-size);
+}
+
+.header__logo {
+  text-decoration: none;
+}
+
+/* Extra class needed for specificity over link color */
+.header .header__logo:hover {
+  color: var(--header-logo-text);
+}
+
+.header__mobile {
+  display: flex;
+}
+
+.header__tablet {
+  display: none;
+}
+
+.header__link {
+  text-decoration: none;
+}
+
+.header__mobile,
+.header__tablet-content {
+  display: flex;
+  align-items: center;
+  gap: var(--header-content-gap);
+}
+
+@media (min-width: 768px) {
+  .header__mobile {
+    display: none;
+  }
+
+  .header__tablet {
+    display: flex;
+  }
+
+  .header__tablet-links {
+    display: flex;
+    gap: var(--header-links-gap);
+  }
+}

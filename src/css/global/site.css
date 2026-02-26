@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+html {
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  color: var(--text-main);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--page-bg);
+}
+
+.main {
+  flex: 1;
+}
+
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+dd,
+dl {
+  margin: 0;
+}
+
+code {
+  font-size: var(--font-size-sm);
+  background-color: var(--code-bg);
+  border-radius: var(--radius-main);
+  padding-right: var(--code-spacing-lat-padding);
+  padding-left: var(--code-spacing-lat-padding);
+}
+
+pre {
+  padding: var(--pre--padding);
+  border-radius: var(--pre-radius);
+  background-color: var(--code-bg);
+  overflow-x: auto;
+}
+
+/* Focus */
+.button:focus-visible,
+.input:focus-visible,
+.checkbox[type="checkbox"]:focus-visible,
+.radio[type="radio"]:focus-visible,
+.text-area:focus-visible,
+.video:focus-visible,
+.breadcrumbs__link:focus-visible,
+.search-box:focus-within,
+.card:focus-within {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--focus-spacer),
+    0 0 0 2px var(--focus-ring),
+    0 0 4px 4px var(--focus-glow);
+  transition: box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+/* Hover - focus style */
+.focus-like-hover:hover {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--focus-spacer),
+    0 0 0 2px var(--focus-ring),
+    0 0 4px 4px var(--focus-glow);
+  transition:
+    box-shadow var(--motion-duration-fast) var(--motion-easing-standard),
+    transform var(--motion-duration-standard) var(--motion-easing-standard);
+}
+
+/* Hover - translate */
+.translate-hover {
+  transition: transform var(--motion-duration-standard) var(--motion-easing-standard);
+}
+
+.translate-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Disabled */
+:disabled,
+.is-disabled {
+  cursor: not-allowed;
+  color: var(--disabled-text);
+  background-color: var(--disabled-bg);
+  border-color: var(--disabled-border-color);
+  border: var(--border-disabled);
+}
+
+/* Remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* When changing theme, make colour change smooth */
+body,
+.header,
+.footer,
+.main,
+.button,
+.card,
+:disabled,
+.is-disabled {
+  transition:
+    background-color var(--motion-duration-standard) var(--motion-easing-standard),
+    color var(--motion-duration-standard) var(--motion-easing-standard),
+    border-color var(--motion-duration-standard) var(--motion-easing-standard);
+}
+
+.icon {
+  transition: fill var(--motion-duration-standard) var(--motion-easing-standard);
+}

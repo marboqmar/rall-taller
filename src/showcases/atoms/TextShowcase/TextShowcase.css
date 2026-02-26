@@ -1,0 +1,28 @@
+.text-showcase__example-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.text-showcase__example .heading--2,
+.text-showcase__example .heading--3 {
+  color: var(--text-main);
+}
+
+.text-showcase__example-bg {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-gray-100);
+}
+
+.text-showcase__example--inverted {
+  background-color: var(--color-gray-500);
+}
+
+[data-theme="dark"] .text-showcase__example-bg {
+  background-color: var(--color-gray-600);
+}
+
+[data-theme="dark"] .text-showcase__example--inverted {
+  background-color: var(--color-gray-300);
+}

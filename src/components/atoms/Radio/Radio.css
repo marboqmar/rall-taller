@@ -1,0 +1,74 @@
+.radio {
+  /* Remove the default browser styling */
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* Custom radio box*/
+  margin: 0;
+  width: var(--control-size);
+  height: var(--control-size);
+  border: var(--control-border);
+  border-radius: var(--radio-radius);
+  background-color: var(--control-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Radio icon */
+.radio__icon {
+  position: absolute;
+  transform: scale(0.7);
+  pointer-events: none; /* Clicks go through to the input */
+  opacity: 0;
+  transition: all var(--motion-duration-fast) var(--motion-easing-standard);
+  color: var(--control-bg-checked);
+}
+
+/* Checked */
+.radio:checked + .radio__icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Error */
+.form-fieldset--error .radio,
+.radio--error {
+  border-color: var(--control-error-border-color);
+  background-color: var(--control-error-bg);
+}
+
+.form-fieldset--error .radio:checked,
+.radio--error:checked {
+  border-color: var(--control-error-border-color);
+  background-color: var(--control-error-bg);
+}
+
+.form-fieldset--error .radio:checked + .radio__icon,
+.radio--error:checked + .radio__icon {
+  opacity: 1;
+  transform: scale(1);
+  color: var(--control-error-border-color);
+}
+
+/* Disabled */
+.radio:disabled {
+  cursor: not-allowed;
+  border: var(--control-disabled-border);
+  background-color: var(--control-disabled-bg);
+}
+
+.selection-control__field:has(.radio:disabled) .label {
+  cursor: not-allowed;
+  color: var(--control-disabled-text);
+}
+
+.radio:disabled:checked {
+  border: var(--control-disabled-border);
+  background-color: var(--control-disabled-bg);
+}
+
+.radio:disabled:checked + .radio__icon {
+  opacity: 1;
+  transform: scale(1);
+  color: var(--control-disabled-text);
+}

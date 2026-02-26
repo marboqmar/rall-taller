@@ -1,0 +1,24 @@
+.input-showcase__input-group .field-wrapper {
+  grid-column: span 4;
+}
+
+.input-showcase__input-example {
+  width: 100%;
+}
+
+.input-showcase__example--focused {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--focus-spacer),
+    0 0 0 2px var(--focus-ring),
+    0 0 4px 4px var(--focus-glow);
+}
+
+@media (min-width: 768px) {
+  .input-showcase__input-group .field-wrapper {
+    grid-column: 1 / span 5;
+  }
+  .input-showcase__input-group .field-wrapper:nth-of-type(even) {
+    grid-column-start: 7;
+  }
+}

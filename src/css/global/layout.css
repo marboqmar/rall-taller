@@ -1,0 +1,50 @@
+:root {
+  --grid-total-columns: 6;
+  --grid-gutter: 16px;
+  --grid-margin: 16px;
+  --container-max-width: 1440px;
+
+  @media (min-width: 768px) {
+    --grid-total-columns: 12;
+    --grid-margin: 24px;
+  }
+
+  @media (min-width: 1280px) {
+    --grid-margin: 32px;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--grid-gutter);
+  /* Default to the total if a specific count isn't provided */
+  grid-template-columns: repeat(var(--grid-column-count, var(--grid-total-columns)), 1fr);
+  /* Resetting potential defaults */
+  margin: 0;
+  padding: 0;
+}
+
+/* Vertical layout */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Horizontal layout */
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}

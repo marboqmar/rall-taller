@@ -1,0 +1,5 @@
+@media (min-width: 768px) {
+  .image-showcase .image {
+    max-width: 600px;
+  }
+}

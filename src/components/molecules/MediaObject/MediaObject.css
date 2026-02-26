@@ -1,0 +1,64 @@
+.media-object {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--media-object-gap);
+  padding: var(--media-object-padding);
+}
+
+.media-object__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--media-object-spacing-text);
+}
+
+.media-object__heading {
+  color: var(--media-object-heading);
+}
+
+.media-object__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Ensure image fills its container */
+.media-object__media .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-object--media-down {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .media-object--media-right {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .media-object--media-left {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .media-object__text {
+    justify-content: center;
+  }
+
+  .media-object--media-left .media-object__media,
+  .media-object--media-right .media-object__media,
+  .media-object--media-left .media-object__text,
+  .media-object--media-right .media-object__text {
+    flex: 1; /* This ensures they take up 50/50 space */
+  }
+
+  .media-object--media-down .media-object__text,
+  .media-object--media-up .media-object__text {
+    align-items: center;
+    text-align: center;
+  }
+}

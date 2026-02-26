@@ -1,0 +1,62 @@
+.status-message {
+  display: flex;
+  flex-direction: row;
+  gap: var(--status-message-inline-gap);
+  border: var(--status-message-border);
+  border-radius: var(--status-message-radius);
+  padding: var(--status-message-spacing-padding);
+}
+
+/* Align icon to centre of first line of text */
+.status-message__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(
+    --icon-alignment-height-paragraph
+  ); /* This is the same as the line height, to centre it appropriately */
+}
+
+/* Info */
+.status-message--info {
+  color: var(--status-message-info-text);
+  border-color: var(--status-message-info-border-color);
+  background-color: var(--status-message-info-bg);
+}
+
+.status-message--info .status-message__icon {
+  color: var(--status-message-info-icon);
+}
+
+/* Success */
+.status-message--success {
+  color: var(--status-message-success-text);
+  border-color: var(--status-message-success-border-color);
+  background-color: var(--status-message-success-bg);
+}
+
+.status-message--success .status-message__icon {
+  color: var(--status-message-success-icon);
+}
+
+/* Warning */
+.status-message--warning {
+  color: var(--status-message-warning-text);
+  border-color: var(--status-message-warning-border-color);
+  background-color: var(--status-message-warning-bg);
+}
+
+.status-message--warning .status-message__icon {
+  color: var(--status-message-warning-icon);
+}
+
+/* Error */
+.status-message--error {
+  color: var(--status-message-error-text);
+  border-color: var(--status-message-error-border-color);
+  background-color: var(--status-message-error-bg);
+}
+
+.status-message--error .status-message__icon {
+  color: var(--status-message-error-icon);
+}

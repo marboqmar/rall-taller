@@ -1,0 +1,130 @@
+/* ==========================================================================
+   1. PRIMITIVES
+   ========================================================================== */
+:root {
+  /* --- FONT FAMILY --- */
+  --font-family-base: "Familjen Grotesk", sans-serif;
+  --font-family-heading: "Bitter", serif;
+
+  /* --- FONT SIZE --- */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+
+  /* --- FONT WEIGHT --- */
+  --font-weight-base: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* --- LINE HEIGHT --- */
+  --line-height-sm: 1.25;
+  --line-height-base: 1.5;
+  --line-height-lg: 1.75;
+}
+
+/* ==========================================================================
+   2. SEMANTIC TOKENS
+   ========================================================================== */
+:root {
+  /* Icon 'first-line anchor' used to align icons to the first line of text. This variable 
+  returns the line height in px, which shall be applied to the icon's wrapper height and then 
+  centre the icon within it's wrapper (e.g. align checkbox to label's first line) */
+  --icon-alignment-height: calc(
+    var(--font-size-base) * var(--line-height-base)
+  ); /* For span, li, controls, etc. */
+
+  --icon-alignment-height-paragraph: calc(
+    var(--paragraph-font-size) * var(--paragraph-line-height)
+  ); /* For paragraphs */
+
+  --icon-alignment-height-heading: calc(
+    var(--heading-font-size-h5) * var(--heading-line-height-h5)
+  ); /* For accordion item heading */
+}
+
+/* ==========================================================================
+   3. COMPONENT TOKENS
+   ========================================================================== */
+:root {
+  /* --- ATOMS --- */
+  /* Heading */
+  --heading-font: var(--font-family-heading);
+
+  /* Heading - H1 */
+  --heading-font-size-h1: var(--font-size-4xl);
+  --heading-font-weight-h1: var(--font-weight-bold);
+  --heading-line-height-h1: var(--line-height-sm);
+
+  /* Heading - H2 */
+  --heading-font-size-h2: var(--font-size-3xl);
+  --heading-font-weight-h2: var(--font-weight-bold);
+  --heading-line-height-h2: var(--line-height-sm);
+
+  /* Heading - H3 */
+  --heading-font-size-h3: var(--font-size-2xl);
+  --heading-font-weight-h3: var(--font-weight-semibold);
+  --heading-line-height-h3: var(--line-height-sm);
+
+  /* Heading - H4 */
+  --heading-font-size-h4: var(--font-size-xl);
+  --heading-font-weight-h4: var(--font-weight-semibold);
+  --heading-line-height-h4: var(--line-height-base);
+
+  /* Heading - H5 */
+  --heading-font-size-h5: var(--font-size-lg);
+  --heading-font-weight-h5: var(--font-weight-medium);
+  --heading-line-height-h5: var(--line-height-base);
+
+  /* Heading - H6 */
+  --heading-font-size-h6: var(--font-size-base);
+  --heading-font-weight-h6: var(--font-weight-medium);
+  --heading-line-height-h6: var(--line-height-base);
+
+  /* Label */
+  --label-font-weight: var(--font-weight-medium);
+
+  /* List */
+  --list-number-font-weight: var(--font-weight-bold);
+
+  /* Paragraph */
+  --paragraph-font-family: var(--font-family-base);
+  --paragraph-line-height: var(--line-height-lg);
+  --paragraph-font-size: var(--font-size-base);
+  --paragraph-font-size-sm: var(--font-size-sm);
+  --paragraph-font-size-lg: var(--font-size-lg);
+  --paragraph-font-weight: var(--font-weight-base);
+  --paragraph-font-weight-semibold: var(--font-weight-semibold);
+  --paragraph-font-weight-bold: var(--font-weight-bold);
+
+  /* ORGANISMS */
+  /* Footer */
+  --footer-heading-font-weight: var(--font-weight-semibold);
+
+  /* Modal */
+  --modal-heading-font-size: var(--font-size-2xl);
+  --modal-heading-font-weight: var(--font-weight-semibold);
+  --modal-heading-line-height: var(--line-height-sm);
+}
+
+/* ==========================================================================
+   4. DESKTOP OVERRIDES
+   ========================================================================== */
+@media (min-width: 1024px) {
+  :root {
+    /* --- FONT SIZE --- */
+    --font-size-xs: 0.875rem; /* 14px */
+    --font-size-sm: 1rem; /* 16px */
+    --font-size-base: 1.125rem; /* 18px */
+    --font-size-lg: 1.25rem; /* 20px */
+    --font-size-xl: 1.5rem; /* 24px */
+    --font-size-2xl: 1.875rem; /* 30px */
+    --font-size-3xl: 2.25rem; /* 36px */
+    --font-size-4xl: 2.625rem; /* 42px */
+  }
+}

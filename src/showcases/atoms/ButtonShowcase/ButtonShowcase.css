@@ -1,0 +1,44 @@
+.button-showcase__column {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.button-showcase__button {
+  width: 100%;
+  max-width: 16rem;
+}
+
+.button-showcase__example--focused {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--focus-spacer),
+    0 0 0 2px var(--focus-ring),
+    0 0 4px 4px var(--focus-glow);
+}
+
+.button-showcase__icon-showcases {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .button-showcase__column {
+    align-items: center;
+  }
+
+  .button-showcase__button {
+    max-width: 12rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button-showcase__button {
+    width: 16rem;
+  }
+  .button-showcase__column {
+    grid-column: span 4;
+  }
+}

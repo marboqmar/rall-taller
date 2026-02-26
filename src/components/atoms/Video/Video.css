@@ -1,0 +1,10 @@
+.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--video-radius);
+  object-fit: cover;
+}
+
+.video--external {
+  border: none;
+}

@@ -1,0 +1,6 @@
+# Allow all crawlers to access the entire site
+User-agent: *
+Allow: /
+
+# Link to your sitemap (TODO update sitemap once have domain)
+# Sitemap: https://www.ralltaller.com/sitemap.xml

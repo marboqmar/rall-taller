@@ -1,0 +1,94 @@
+.accordion-item {
+  position: relative;
+  border: var(--accordion-item-border);
+  border-radius: var(--accordion-item-radius);
+}
+
+.accordion-item__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--accordion-item-heading-padding);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion-item__heading-text {
+  flex: 1;
+  color: var(--accortion-item-heading);
+}
+
+.accordion-item__icon {
+  flex-shrink: 0;
+  width: var(--accordion-item-icon-size);
+  height: var(--accordion-item-icon-size);
+  color: var(--accordion-item-icon);
+  transform: rotate(0deg);
+  transition: transform var(--motion-duration-standard) var(--motion-easing-standard);
+  border-radius: var(--accordion-item-icon-radius);
+}
+
+.accordion-item__content-wrapper {
+  display: grid;
+  /* Default to collapsed accordion */
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--motion-duration-standard) var(--motion-easing-standard);
+  overflow: hidden;
+}
+
+.accordion-item__content {
+  position: relative;
+  padding: var(--accordion-item-content-padding);
+}
+
+.accordion-item__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--accordion-item-separator-width);
+  height: var(--accordion-item-separator-height);
+  background-color: var(--accordion-item-separator);
+}
+
+/* Show content when accordion is expanded */
+.accordion-item--expanded .accordion-item__content-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.accordion-item__content-inner {
+  /* This inner div allows the grid to know the "natural" height */
+  min-height: 0;
+}
+
+/* Accordion expanded */
+.accordion-item--expanded .accordion-item__icon {
+  transform: rotate(180deg);
+}
+
+/* Hover and focus */
+.accordion-item__button:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.accordion-item__icon:focus {
+  outline: none;
+}
+
+.accordion-item__button:focus-visible {
+  box-shadow: none;
+}
+
+.accordion-item__button:focus-visible .accordion-item__icon,
+.accordion-item__button:hover .accordion-item__icon {
+  box-shadow:
+    0 0 0 1px var(--focus-spacer),
+    0 0 0 2px var(--focus-ring),
+    0 0 4px 4px var(--focus-glow);
+  transition: box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
+}

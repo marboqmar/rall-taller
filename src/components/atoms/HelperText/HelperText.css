@@ -1,0 +1,31 @@
+.helper-text {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--helper-spacing-inline-icon);
+  margin-top: var(--helper-spacing-field);
+}
+
+.helper-text__message {
+  display: block;
+  color: var(--helper-text-text);
+}
+
+.helper-text--error .helper-text__message {
+  color: var(--helper-text-error-text);
+}
+
+/* Align error icon to centre of messages's first line */
+.helper-text__icon-wrapper {
+  height: var(
+    --icon-alignment-height
+  ); /* This is the same as the line height, to centre it appropriately */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.helper-text__icon {
+  width: var(--helper-text-icon-size);
+  height: var(--helper-text-icon-size);
+  color: var(--helper-text-error-icon);
+}

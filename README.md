@@ -1,13 +1,8 @@
-# Starter
+# Rall taller
 
-This is a starter template designed to serve as a solid foundation for web projects. It provides a
-library of essential, accessible, easily customizable components while maintaining a minimal
-dependency footprint. It also provides live showcases of these components.
+Single page application (SPA)
 
-The goal is to provide all the core building blocks needed for modern web development without the
-overhead of unnecessary third-party packages.
-
-You can find this project deployed here https://starter-gilt-six.vercel.app
+TODO - complete this section
 
 ## Tech stack
 
@@ -30,6 +25,12 @@ Another limitation is that CSS variables cannot be used in `@media` queries, whi
 breakpoints manually. However, the author still considers the fact that CSS does not need to be
 compiled a major benefit.
 
+## Why React Router if this is a SPA?
+
+Despite this being a SPA, React Router is still used to prevent the user from accidentally leaving the site when they press the back browser button after they have opened a container, and also to manage URL parameters to allow the user to share a URL that renders the site with certain container open.
+
+React Router also improves how the site structure is perceived by crawlers and screen readers, improving both accessibility and SEO.
+
 ## Getting Started
 
 To set up this project:
@@ -48,6 +49,8 @@ To set up this project:
 
 ## Project Structure
 
+TODO - review this section once project is finished
+
 The structure of this project is as follows:
 
 ```
@@ -64,58 +67,11 @@ src/
 │   └── style.css       # Main stylesheet entry point
 ├── hooks               # Custom hooks
 ├── pages/              # Page components
-├── showcases           # Live showcases of the available components
 ├── utils               # Helper utilities
 ├── App.jsx             # Main app component
 ├── routes.jsx          # React Router configuration
 └── main.jsx            # Application entry point
 ```
-
-## Showcases
-
-This project includes live showcases to demonstrate how components behave and interact. To view
-them, run `pnpm run dev`. Then, navigate the local URL in your browser to explore the available
-components.
-
-### Cleaning up the showcases
-
-When you are ready to start building your actual site, you can remove the showcases' files and references to keep your project clean:
-
-- Files: delete the `src/showcases` folder and all files within `src/pages`.
-- Routes: in `src/routes.jsx`, remove the showcase imports and their corresponding route objects.
-
-## Customisation
-
-The top priority of this project is to provide components that are accessible and can be customised quickly and easily.
-
-### Variables
-
-To adapt the components of this project to your designs, modify the variables found in the following
-files:
-
-- `src/css/global/color-variables.css`
-- `src/css/global/site.css`
-- `src/css/global/spacing.css`
-- `src/css/global/typography-variables.css`
-- `src/css/global/variables.css`
-
-All variables use CSS custom properties, so you can override them in your own CSS files or modify
-them directly in these files.
-
-Also, modify the container and grid classes as needed. These can be found in `src/css/global/layout.css` and `src/css/global/grid-utils.css`.
-
-### Typography
-
-To modify the typography, update the font families in `src/css/global/typography-variables.css`,
-and then adjust the font link in `index.html`.
-
-The `code` tag styling is located in `src/css/global/site.css`.
-
-The `--icon-alignment-height` variable (located in `src/css/global/typography-variables.css`) is a
-'first-line anchor', used to align the icon to the first line of text. It uses the variables
-`--line-height-base` and `--font-size-base` to calculate the height the first line of text has and
-align the icon accordingly. If the line height or font sizes used are different, update this
-variable accordingly.
 
 ### Breakpoints
 
@@ -125,6 +81,7 @@ The breakpoints used for this project are:
 - Tablet: `>= 768px`.
 - Desktop: `>= 1024px`.
 - Desktop-lg: `>= 1280px`.
+- Desktop-xl: `>=1440px`.
 
 Usage in CSS:
 
@@ -143,14 +100,3 @@ Usage in CSS:
 As previously discussed, CSS variables cannot be used in `@media` queries, so breakpoint values
 must be written manually. Consequently, in order to modify these breakpoints, do a global search
 and replace all instances manually across your CSS files.
-
-## Create new pages
-
-To create a new page, follow these steps:
-
-1. Create the new page adding a new `.jsx` file in `src/pages/`.
-2. Style (optional): create a corresponding `.css` file in `src/css/pages/` and import it in the
-   new page.
-3. Register the route: define the path for the new page in `src/routes.jsx`.
-4. Build the page's content: import and use the design system components (atoms, molecules, etc.)
-   within your page to maintain consistency.

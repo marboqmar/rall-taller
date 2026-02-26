@@ -1,0 +1,27 @@
+name: Lighthouse CI
+on: [pull_request]
+
+permissions:
+  contents: read
+  pull-requests: read
+  deployments: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Wait for Vercel Preview URL
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+        id: vercel_preview_url
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 60
+
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.12.x
+          lhci autorun --collect.url=${{ steps.vercel_preview_url.outputs.url }}
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

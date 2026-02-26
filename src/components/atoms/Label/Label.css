@@ -1,0 +1,9 @@
+.label {
+  display: block;
+  font-weight: var(--label-font-weight);
+  margin-bottom: var(--label-spacing-field);
+}
+
+.label--required {
+  color: var(--label-required);
+}

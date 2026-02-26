@@ -2,6 +2,7 @@ import './Header.css';
 import { Button } from '../../atoms/Button/Button';
 import { Icon } from '../../atoms/Icon/Icon';
 import { Link } from 'react-router-dom';
+import { ThemeToggleButton } from '../../atoms/Button/ThemeToggleButton/ThemeToggleButton';
 import { MobileMenu } from '../../molecules/MobileMenu/MobileMenu';
 import { NavLink } from 'react-router-dom';
 
@@ -36,9 +37,11 @@ export const Header = ({ items }) => {
                   </NavLink>
                 ))}
               </nav>
+              <ThemeToggleButton />
             </div>
           </div>
           <div className="header__mobile">
+            <ThemeToggleButton />
             <MobileMenu items={safeItems} />
           </div>
         </div>

@@ -1,0 +1,76 @@
+.table__row:nth-child(even) {
+  background-color: var(--table-row);
+}
+
+/* Mobile table */
+@media (max-width: 768px) {
+  .table,
+  .table__header,
+  .table__body,
+  .table__row,
+  .table__cell {
+    display: block; /* Break the table structure */
+    width: 100%;
+  }
+
+  /* Hide the actual header row visually but keep it for screen readers */
+  .table__header {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    background-color: transparent;
+  }
+
+  .table__row {
+    border-top: var(--table-border);
+    border-right: var(--table-border);
+    border-left: var(--table-border);
+  }
+
+  .table__row:last-of-type {
+    border-bottom: var(--table-border);
+  }
+
+  .table__cell {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--table-spacing-cell-padding);
+    text-align: right;
+    border-bottom: var(--table-border);
+  }
+
+  /* Inject the label using the data-label attribute */
+  .table__cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    margin-right: var(--table-spacing-cell-padding);
+  }
+
+  .table__cell:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Desktop table */
+@media (min-width: 768px) {
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .table__header {
+    background-color: var(--table-header);
+  }
+
+  .table__cell {
+    padding: var(--table-spacing-cell-padding);
+    border-bottom: var(--table-border);
+  }
+}

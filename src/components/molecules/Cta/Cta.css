@@ -1,0 +1,82 @@
+.cta {
+  padding: var(--cta-spacing-padding);
+  background-color: var(--cta-bg);
+  border-radius: var(--cta-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--cta-spacing-gap);
+  width: 100%;
+}
+
+.cta__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cta-spacing-content);
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cta-spacing-text);
+}
+
+.cta__heading {
+  color: var(--cta-heading);
+}
+
+.cta__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cta-spacing-actions);
+  flex-shrink: 0;
+}
+
+.cta__button {
+  width: 100%;
+}
+
+.cta__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Ensure image fills its container */
+.cta__image .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    flex-direction: row;
+    gap: var(--cta-spacing-gap);
+  }
+
+  .cta--with-image .cta__wrapper {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .cta__image {
+    flex: 1;
+  }
+
+  .cta:not(.cta--with-image) .cta__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--cta-spacing-gap);
+  }
+
+  .cta__button-wrapper {
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+  }
+}

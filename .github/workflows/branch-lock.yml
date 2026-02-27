@@ -12,3 +12,5 @@ jobs:
         run: |
           echo "ERROR: You can only merge into main from the dev branch."
           exit 1
+
+1

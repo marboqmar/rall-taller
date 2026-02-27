@@ -77,13 +77,7 @@ pre {
 
 /* Focus */
 .button:focus-visible,
-.input:focus-visible,
-.checkbox[type="checkbox"]:focus-visible,
-.radio[type="radio"]:focus-visible,
-.text-area:focus-visible,
 .video:focus-visible,
-.breadcrumbs__link:focus-visible,
-.search-box:focus-within,
 .card:focus-within {
   outline: none;
   box-shadow:
@@ -147,23 +141,4 @@ pre {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-/* When changing theme, make colour change smooth */
-body,
-.header,
-.footer,
-.main,
-.button,
-.card,
-:disabled,
-.is-disabled {
-  transition:
-    background-color var(--motion-duration-standard) var(--motion-easing-standard),
-    color var(--motion-duration-standard) var(--motion-easing-standard),
-    border-color var(--motion-duration-standard) var(--motion-easing-standard);
-}
-
-.icon {
-  transition: fill var(--motion-duration-standard) var(--motion-easing-standard);
 }

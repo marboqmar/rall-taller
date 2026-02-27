@@ -9,10 +9,10 @@
  * Tablet:              >= 768px
  * Desktop:             >= 1024px
  * Desktop-lg:          >= 1280px
+ * Desktop-xl:          >= 1440px
  *
  * Usage example:
  *   @media (min-width: 768px) { ... }
- *   @media (min-width: 1024px) { ... }
  */
 
 :root {
@@ -38,12 +38,7 @@
 
   /* --- SEMANTIC TOKENS --- */
   /* Responsive */
-  --spacing-xs: 0.5rem; /* 8px */
-  --spacing-sm: 1rem; /* 16px */
-  --spacing-md: 1.5rem; /* 24px */
-  --spacing-lg: 2rem; /* 32px */
-  --spacing-xl: 3rem; /* 48px */
-  --spacing-xxl: 5rem; /* 80px */
+  --spacing-md: 1rem; /* 16px */
 
   /* General */
   --spacing-layout: var(--spacing-xl); /* Spacing between major sections/components */
@@ -75,10 +70,6 @@
   --motion-duration-fast: 0.2s;
   --motion-easing-standard: ease;
 
-  /* Control */
-  --control-spacing-padding: var(--spacing-inset);
-  --control-spacing-text: var(--spacing-0-5);
-
   /* --- COMPONENT TOKENS --- */
   /* ATOMS */
   /* Button */
@@ -90,29 +81,6 @@
   /* Code */
   --code-spacing-lat-padding: var(--spacing-0-25);
 
-  /* Definition list */
-  --definition-spacing-list-items: var(--spacing-0-5); /* Spacing between each dt and dd group */
-  --definition-spacing-list-description: var(
-    --spacing-0-25
-  ); /* Spacing between the dt and the dd */
-
-  /* Form fieldset */
-  --form-fieldset-spacing-field-gap: var(--spacing-component-inner);
-
-  /* Helper text */
-  --helper-spacing-field: var(
-    --spacing-0-5
-  ); /* Spacing between a helper and the field it refers to */
-  --helper-spacing-inline-icon: var(--spacing-inline-icon-gap);
-
-  /* Input */
-  --input-spacing-icon: var(--spacing-inset-h); /* Right spacing of the input's icon */
-
-  /* Label */
-  --label-spacing-field: var(
-    --spacing-0-5
-  ); /* Spacing between a label and the field it refers to */
-
   /* List */
   --list-spacing-number: var(
     --spacing-0-25
@@ -121,37 +89,7 @@
   /* Pre */
   --pre--padding: var(--spacing-sm);
 
-  /* Table */
-  --table-spacing-cell-padding: var(--spacing-sm);
-
   /* MOLECULES */
-  /* Accordion item */
-  --accordion-item-heading-padding: var(--spacing-surface-padding);
-  --accordion-item-button-offset-h: var(--spacing-surface-padding);
-  --accordion-item-button-offset-v: var(--spacing-surface-padding);
-  --accordion-item-content-padding: var(--spacing-surface-padding);
-
-  /* Breadbrumbs */
-  --breadcrumbs-padding-upper: var(--spacing-0-25);
-  --breadcrumbs-padding-lower: var(--spacing-component-inner);
-  --breadcrumbs-padding-left: 0;
-  --breadcrumbs-separator-spacing: var(--spacing-0-25);
-
-  /* CTA */
-  --cta-spacing-padding: var(--spacing-surface-padding);
-  --cta-spacing-gap: var(--spacing-xl); /* Main gap between image and text */
-  --cta-spacing-text: var(--spacing-component-inner); /* Gap between title and body */
-  --cta-spacing-content: var(--spacing-component-inner-lg); /* Gap between text and buttons */
-  --cta-spacing-actions: var(--spacing-1); /* Gap between buttons */
-
-  /* Form */
-  --form-spacing-server-error: var(--spacing-component-inner);
-  --form-spacing-section-gap: var(--spacing-lg);
-  --form-spacing-field-gap: var(--spacing-component-inner);
-  --form-spacing-grid-gap: var(--spacing-component-inner-lg);
-  --form-spacing-heading: var(--spacing-component-inner);
-  --form-spacing-button: var(--spacing-lg);
-
   /* Media object */
   --media-object-padding: var(--spacing-surface-padding);
   --media-object-gap: var(--spacing-xl); /* Main gap between media and text */
@@ -163,35 +101,12 @@
   --mobile-menu-content-gap: var(--spacing-component-inner-lg);
   --mobile-menu-link-padding: var(--spacing-inset);
 
-  /* Search box */
-  --search-box-button-offset: var(--spacing-inset-h);
-
-  /* Status message */
-  --status-message-spacing-padding: var(--spacing-inset);
-  --status-message-inline-gap: var(--spacing-inline-icon-gap); /* Gap between icon and text */
-
   /* ORGANISMS */
-  /* Accordion */
-  --accordion-gap: var(--spacing-component-inner);
 
   /* Card */
   --card-padding: var(--spacing-surface-padding);
   --card-image-spacing: var(--spacing-component-inner-lg); /* Margin between image and text */
   --card-spacing-text: var(--spacing-component-inner); /* Gap between title and body */
-
-  /* Footer */
-  --footer-padding: var(--spacing-xxl);
-  --footer-content-gap: var(--spacing-xl); /* Gap between top content and bottom content */
-  --footer-content-top-gap: var(--spacing-xl); /* Gap between top content elements*/
-  --footer-columns-gap: var(--spacing-xl); /* Gap between link columns */
-  --footer-columns-gap-compact: var(--spacing-component-inner); /* Gap between link columns */
-  --footer-column-content-gap: var(
-    --spacing-component-inner
-  ); /* Gap between column heading and links */
-  --footer-links-gap: var(--spacing-xs); /* Gap between links within a column */
-  --footer-content-bottom-gap: var(
-    --spacing-component-inner
-  ); /* Gap between bottom content elements*/
 
   /* Header */
   --header-padding: var(--spacing-md);
@@ -214,17 +129,12 @@
     2. SIZE (width and height) 
     ========================================================================== */
   /* --- PRIMITIVES --- */
-  --size-icon-xs: 1rem;
-  --size-icon-sm: 1.5rem;
-  --size-icon-md: 2rem;
+  --size-icon-md: 3rem; /* 48px */
 
   /* --- SEMANTIC --- */
-  --size-icon-main: var(--size-icon-sm);
+  --size-icon-main: var(--size-icon-md);
 
   --ratio-icon-to-text: 0.7; /* Used to reduce size of icons */
-
-  /* Control */
-  --control-size: var(--size-icon-xs);
 
   /* --- COMPONENT TOKENS --- */
   /* ATOMS */
@@ -232,39 +142,13 @@
   --button-size-icon-only: var(--spacing-2-5); /* Button container size */
   --button-icon-size: var(--size-icon-main); /* Size of the icon inside the button */
 
-  /* Helper text */
-  --helper-text-icon-size: var(--size-icon-main);
-
   /* Icon */
   --icon-atom-size: var(--size-icon-main);
-
-  /* Input */
-  --input-icon-size: var(--size-icon-xs);
 
   /* List */
   --list-marker-width: var(--spacing-1-5);
 
-  /* Text area */
-  --text-area-height: var(--spacing-8);
-
-  /* MOLECULES */
-  /* Accordion item */
-  --accordion-item-icon-size: var(--size-icon-main);
-  --accordion-item-separator-width: 80%;
-  --accordion-item-separator-height: 1px;
-
-  /* Breadcrumbs */
-  --breadcrumbs-icon-size: calc(
-    var(--icon-alignment-height) * var(--ratio-icon-to-text)
-  ); /* Scales down the height of the icon */
-
-  /* Search box*/
-  --search-box-icon-size: var(--size-icon-main);
-
   /* ORGANISMS*/
-  /* Footer */
-  --footer-logo-size: var(--spacing-2);
-
   /* Header */
   --header-logo-size: var(--spacing-2);
 
@@ -278,34 +162,15 @@
     ========================================================================== */
   /* --- PRIMITIVES --- */
   --border-1: 1px;
-  --border-2: 2px;
 
   /* --- SEMANTIC TOKENS --- */
   --border-primary: var(--border-1) solid var(--border-main);
-  --border-disabled: var(--border-1) solid var(--disabled-border-color);
-
-  /* Control */
-  --control-border: var(--border-primary);
-  --control-disabled-border: var(--border-disabled);
 
   /* --- COMPONENT TOKENS --- */
   /* ATOMS */
   /* Button */
   --button-border: var(--border-primary);
   --button-disabled-border: var(--border-disabled);
-
-  /* Table */
-  --table-border: var(--border-primary);
-
-  /* MOLECULES */
-  /* Accordion item */
-  --accordion-item-border: var(--border-primary);
-
-  /* Search box */
-  --search-box-border: var(--border-primary);
-
-  /* Status message */
-  --status-message-border: var(--border-primary);
 
   /* ORGANISMS */
   /* Card */
@@ -316,70 +181,42 @@
     ========================================================================== */
 
   /* --- PRIMITIVES --- */
-  --radius-xs: 0.25rem; /* 4px */
-  --radius-sm: 0.375rem; /* 6px */
-  --radius-md: 0.75rem; /* 12px */
-  --radius-lg: 1rem; /* 16px */
-  --radius-xl: 1.5rem; /* 24px */
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 1rem; /* 16px */
   --radius-full: 9999px;
 
   /* --- SEMANTIC TOKENS ---*/
-  --radius-main: var(--radius-sm);
-
-  /* Control */
-  --control-radius: var(--radius-main);
+  --radius-main: var(--radius-main);
 
   /* --- COMPONENT TOKENS */
   /* ATOMS */
   /* Button */
   --button-radius-sm: var(--radius-main);
-  --button-radius-lg: var(--radius-md);
+  --button-radius-lg: var(--radius-main);
   --button-radius-pill: var(--radius-full);
 
-  /* Checkbox*/
-  --checkbox-radius: var(--radius-xs);
-
   /* Image */
-  --image-radius: var(--radius-md);
+  --image-radius: var(--radius-main);
 
   /* Pre */
   --pre-radius: var(--radius-main);
 
-  /* Radio */
-  --radio-radius: var(--radius-full);
-
-  /* Text area */
-  --text-area-radius: var(--radius-main);
-
   /* Video */
-  --video-radius: var(--radius-md);
+  --video-radius: var(--radius-main);
 
   /* MOLECULES */
-  /* Accordion item */
-  --accordion-item-radius: var(--radius-main);
-  --accordion-item-icon-radius: var(--radius-full);
-
-  /* CTA */
-  --cta-radius: var(--radius-main);
-
   /* Media object */
   --media-object-radius: var(--radius-main);
 
   /* Mobile menu */
-  --mobile-menu-radius: var(--radius-xl);
-
-  /* Search box */
-  --search-box-radius: var(--radius-main);
-
-  /* Status message */
-  --status-message-radius: var(--radius-main);
+  --mobile-menu-radius: var(--radius-main);
 
   /* ORGANISMS */
   /* Card */
   --card-radius: var(--radius-main);
 
   /* Modal */
-  --modal-radius: var(--radius-md);
+  --modal-radius: var(--radius-main);
 
   /* ==========================================================================
     5. Z-INDEX
@@ -400,23 +237,7 @@
   :root {
     /* --- SPACING --- */
     /* SEMANTIC */
-    --spacing-xs: 1rem; /* 16px */
-    --spacing-sm: 1.5rem; /* 24px */
-    --spacing-md: 2rem; /* 32px */
-    --spacing-lg: 2.5rem; /* 40px */
-    --spacing-xl: 4rem; /* 64px */
-    --spacing-xxl: 8rem; /* 124px */
-
-    /* General */
-    --spacing-inset-v: var(--spacing-0-5);
-    --spacing-inset-h: var(--spacing-1);
-    --spacing-inset: var(--spacing-inset-v) var(--spacing-inset-h);
-    --spacing-inset-sm-v: var(--spacing-0-375);
-    --spacing-inset-sm-h: var(--spacing-0-5);
-    --spacing-inset-sm: var(--spacing-inset-sm-v) var(--spacing-inset-sm-h);
-    --spacing-inset-lg-v: var(--spacing-0-75);
-    --spacing-inset-lg-h: var(--spacing-1-5);
-    --spacing-inset-lg: var(--spacing-inset-lg-v) var(--spacing-inset-lg-h);
+    --spacing-md: 1.5rem; /* 24px */
   }
 }
 
@@ -427,11 +248,6 @@
   :root {
     /* --- SPACING --- */
     /* SEMANTIC */
-    --spacing-xs: 1.5rem; /* 24px */
-    --spacing-sm: 2rem; /* 32px */
-    --spacing-md: 2.5rem; /* 40px */
-    --spacing-lg: 3rem; /* 48px */
-    --spacing-xl: 6rem; /* 96px */
-    --spacing-xxl: 10rem; /* 160px */
+    --spacing-md: 2rem; /* 32px */
   }
 }

@@ -9,8 +9,12 @@
     --grid-margin: 24px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     --grid-margin: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    --grid-margin: 60px;
   }
 }
 

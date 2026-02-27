@@ -3,22 +3,18 @@
    ========================================================================== */
 :root {
   /* --- FONT FAMILY --- */
-  --font-family-base: "Familjen Grotesk", sans-serif;
-  --font-family-heading: "Bitter", serif;
+  --font-family-base: "Open Sans", sans-serif;
+  --font-family-heading: "Montserrat", sans-serif;
 
   /* --- FONT SIZE --- */
-  --font-size-xs: 0.75rem; /* 12px */
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-2xl: 1.5rem; /* 24px */
-  --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-base: 0.875rem; /* 14px */
+  --font-size-lg: 1rem; /* 16px */
+  --font-size-xl: 1.125rem; /* 18px */
+  --font-size-2xl: 1.25rem; /* 20px */
+  --font-size-3xl: 2rem; /* 32px */
 
   /* --- FONT WEIGHT --- */
   --font-weight-base: 400;
-  --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
@@ -26,6 +22,9 @@
   --line-height-sm: 1.25;
   --line-height-base: 1.5;
   --line-height-lg: 1.75;
+
+  /* ---LETTER SPACING */
+  --letter-spacing-sm: -0.02em;
 }
 
 /* ==========================================================================
@@ -115,16 +114,13 @@
 /* ==========================================================================
    4. DESKTOP OVERRIDES
    ========================================================================== */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   :root {
     /* --- FONT SIZE --- */
-    --font-size-xs: 0.875rem; /* 14px */
-    --font-size-sm: 1rem; /* 16px */
-    --font-size-base: 1.125rem; /* 18px */
-    --font-size-lg: 1.25rem; /* 20px */
-    --font-size-xl: 1.5rem; /* 24px */
-    --font-size-2xl: 1.875rem; /* 30px */
-    --font-size-3xl: 2.25rem; /* 36px */
-    --font-size-4xl: 2.625rem; /* 42px */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.25rem; /* 20px */
+    --font-size-2xl: 1.5rem; /* 24px */
+    --font-size-3xl: 2.5rem; /* 40px */
   }
 }

@@ -1,6 +1,7 @@
 name: Check PR Base
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches: [main]
 
 jobs:

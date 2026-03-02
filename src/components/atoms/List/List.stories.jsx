@@ -7,7 +7,6 @@ export default {
   argTypes: {
     ordered: {
       control: 'boolean',
-      defaultValue: 'false',
     },
   },
 };

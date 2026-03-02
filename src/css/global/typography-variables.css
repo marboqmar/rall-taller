@@ -36,15 +36,7 @@
   centre the icon within it's wrapper (e.g. align checkbox to label's first line) */
   --icon-alignment-height: calc(
     var(--font-size-base) * var(--line-height-base)
-  ); /* For span, li, controls, etc. */
-
-  --icon-alignment-height-paragraph: calc(
-    var(--paragraph-font-size) * var(--paragraph-line-height)
-  ); /* For paragraphs */
-
-  --icon-alignment-height-heading: calc(
-    var(--heading-font-size-h5) * var(--heading-line-height-h5)
-  ); /* For accordion item heading */
+  ); /* For span, li, paragraph, etc. */
 }
 
 /* ==========================================================================
@@ -54,56 +46,36 @@
   /* --- ATOMS --- */
   /* Heading */
   --heading-font: var(--font-family-heading);
+  --heading-line-height: var(--line-height-sm);
+  --heading-letter-spacing: var(--letter-spacing-sm);
+  --heading-font-weight: var(--font-weight-semibold);
+
+  /* Heading - H1 XL */
+  --heading-font-size-h1-xl: var(--font-size-3xl);
+  --heading-font-weight-h1-xl: var(--font-weight-bold);
 
   /* Heading - H1 */
-  --heading-font-size-h1: var(--font-size-4xl);
-  --heading-font-weight-h1: var(--font-weight-bold);
-  --heading-line-height-h1: var(--line-height-sm);
+  --heading-font-size-h1: var(--font-size-2xl);
 
   /* Heading - H2 */
-  --heading-font-size-h2: var(--font-size-3xl);
-  --heading-font-weight-h2: var(--font-weight-bold);
-  --heading-line-height-h2: var(--line-height-sm);
+  --heading-font-size-h2: var(--font-size-xl);
 
   /* Heading - H3 */
-  --heading-font-size-h3: var(--font-size-2xl);
-  --heading-font-weight-h3: var(--font-weight-semibold);
-  --heading-line-height-h3: var(--line-height-sm);
-
-  /* Heading - H4 */
-  --heading-font-size-h4: var(--font-size-xl);
-  --heading-font-weight-h4: var(--font-weight-semibold);
-  --heading-line-height-h4: var(--line-height-base);
-
-  /* Heading - H5 */
-  --heading-font-size-h5: var(--font-size-lg);
-  --heading-font-weight-h5: var(--font-weight-medium);
-  --heading-line-height-h5: var(--line-height-base);
-
-  /* Heading - H6 */
-  --heading-font-size-h6: var(--font-size-base);
-  --heading-font-weight-h6: var(--font-weight-medium);
-  --heading-line-height-h6: var(--line-height-base);
-
-  /* Label */
-  --label-font-weight: var(--font-weight-medium);
+  --heading-font-size-h3: var(--font-size-lg);
 
   /* List */
-  --list-number-font-weight: var(--font-weight-bold);
+  --list-number-font-size: var(--font-size-base);
+  --list-number-font-weight: var(--font-weight-base);
+  --list-value-font-size: var(--font-size-base);
 
   /* Paragraph */
   --paragraph-font-family: var(--font-family-base);
-  --paragraph-line-height: var(--line-height-lg);
   --paragraph-font-size: var(--font-size-base);
-  --paragraph-font-size-sm: var(--font-size-sm);
-  --paragraph-font-size-lg: var(--font-size-lg);
+  --paragraph-line-height: var(--line-height-base);
   --paragraph-font-weight: var(--font-weight-base);
-  --paragraph-font-weight-semibold: var(--font-weight-semibold);
   --paragraph-font-weight-bold: var(--font-weight-bold);
 
   /* ORGANISMS */
-  /* Footer */
-  --footer-heading-font-weight: var(--font-weight-semibold);
 
   /* Modal */
   --modal-heading-font-size: var(--font-size-2xl);

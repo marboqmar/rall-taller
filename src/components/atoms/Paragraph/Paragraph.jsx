@@ -1,38 +1,35 @@
 import './Paragraph.css';
 import { classNames } from '../../../utils/helpers';
+import PropTypes from 'prop-types';
 
 /**
  * Paragraph component
  *
- * Component props:
- * @param {string} [className] - Additional CSS classes.
- * @param {'sm | 'lg'} [fontSize] - Modifies font size from "base" to the stated value.
- * @param {'semibold' | 'bold'} [fontWeight] - Modifies the font weight from "regular" to the
- * stated value.
- * @param {boolean} isInvertedcolor - Adds class to invert text color.
- * @param {node} children - Paragraph content.
- * @param {object} [rest] - Additional props passed.
+ * Supports all standard HTML paragraph attributes via `...rest`.
+ *
+ * @example
+ * ```jsx
+ * <Paragraph>Lorem ipsum</Paragraph>
+ * ```
  */
 
-export const Paragraph = ({
-  className = '',
-  fontSize,
-  fontWeight,
-  isInvertedcolor,
-  children,
-  ...rest
-}) => {
-  const classes = classNames(
-    'paragraph',
-    className,
-    { [`paragraph--font-size-${fontSize}`]: fontSize },
-    { [`paragraph--font-weight-${fontWeight}`]: fontWeight },
-    { 'paragraph--color-inverted': isInvertedcolor },
-  );
+export const Paragraph = ({ className = '', isBold, children, ...rest }) => {
+  const classes = classNames('paragraph', className, { 'paragraph--bold': isBold });
 
   return (
     <p className={classes} {...rest}>
       {children}
     </p>
   );
+};
+
+Paragraph.propTypes = {
+  /** Additional CSS classes */
+  className: PropTypes.string,
+
+  /** If true, modifies the font weight to bold */
+  isBold: PropTypes.bool,
+
+  /** Text to display */
+  children: PropTypes.node.isRequired,
 };

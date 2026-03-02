@@ -23,14 +23,22 @@
   justify-content: flex-end;
 }
 
-.list__bullet {
+.list__marker-wrapper .list__bullet {
   color: var(--list-marker);
-  width: 0.75rem;
-  height: 0.75rem;
+  width: var(--list-bullet-size);
+  height: var(--list-bullet-size);
+}
+
+.list__value {
+  font-size: var(--list-value-font-size);
 }
 
 .list--ordered {
   counter-reset: list-counter;
+}
+
+.list__item-number {
+  font-size: var(--list-number-font-size);
 }
 
 .list__item-number::before {

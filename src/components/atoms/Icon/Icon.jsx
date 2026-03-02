@@ -1,32 +1,30 @@
 import './Icon.css';
 import { classNames } from '../../../utils/helpers';
+import PropTypes from 'prop-types';
 
 /**
  * Icon component
  *
- * Component props:
- * @param {string} [className] - Additional CSS classes.
- * @param {string} [viewBox="0 0 24 24"] - Position and dimension of the icon.
- * @param {string} [name] - ID of the icon in the global sprite (/assets/icons/sprite.svg).
- * @param {string} [href] - Path to a standalone .svg file or external sprite.
- * @param {boolean} [isDecorative=false] If true, hides icon from screen readers.
- * If false, 'ariaLabel' is mandatory.
- * @param {string} [ariaLabel] - Required if isDecorative is false. Provides the accessible name.
- * @param {node} children - Icon content.
- * @param {object} [rest] - Additional props passed.
+ * Supports all standard HTML icon attributes via `...rest`.
  *
  * @example
+ * ```jsx
  * <Icon isDecorative>
  *   <path d="M9..." />
  * </Icon>
+ * ```
  *
  * @example
- * // Icon from a file
- * <Icon href="/assets/icons/check.svg"></Icon>
+ * Icon from a file
+ * ```jsx
+ * <Icon href="/assets/icons/check.svg" />
+ * ```
  *
  * @example
- * // Icon from SVG sprite
- * <Icon name="icon-check"></Icon>
+ * Icon from SVG sprite
+ * ```jsx
+ * <Icon name="icon-check" />
+ * ```
  */
 
 export const Icon = ({
@@ -63,4 +61,27 @@ export const Icon = ({
       {content}
     </svg>
   );
+};
+
+Icon.propTypes = {
+  /** Additional CSS classes */
+  className: PropTypes.string,
+
+  /** Position and dimension of the icon */
+  viewBox: PropTypes.string,
+
+  /** ID of the icon in the global sprite */
+  name: PropTypes.string,
+
+  /** Path to a standalone .svg file */
+  href: PropTypes.string,
+
+  /** If true, hides icon from screen readers. If false, 'ariaLabel' is mandatory */
+  isDecorative: PropTypes.bool,
+
+  /** Provides the accessible name. Required if isDecorative is false */
+  ariaLabel: PropTypes.string,
+
+  /** Icon content */
+  children: PropTypes.node,
 };

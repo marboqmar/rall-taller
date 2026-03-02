@@ -76,13 +76,9 @@
 
   /* Paragraph */
   --paragraph-font-family: var(--font-family-base);
-  --paragraph-line-height: var(--line-height-lg);
   --paragraph-font-size: var(--font-size-base);
-  --paragraph-font-size-sm: var(--font-size-sm);
-  --paragraph-font-size-lg: var(--font-size-lg);
-  --paragraph-font-weight: var(--font-weight-base);
-  --paragraph-font-weight-semibold: var(--font-weight-semibold);
-  --paragraph-font-weight-bold: var(--font-weight-bold);
+  --paragraph-line-height: var(--line-height-base);
+  --paragraph-bold: var(--font-weight-bold);
 
   /* ORGANISMS */
 

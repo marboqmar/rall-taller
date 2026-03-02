@@ -9,6 +9,10 @@ export default {
       control: { type: 'select' },
       options: [1, 2, 3],
     },
+    size: {
+      control: { type: 'select' },
+      options: [1, 2, 3],
+    },
   },
 };
 

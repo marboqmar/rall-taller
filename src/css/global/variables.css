@@ -185,7 +185,7 @@
   --radius-full: 9999px;
 
   /* --- SEMANTIC TOKENS ---*/
-  --radius-main: var(--radius-main);
+  --radius-main: var(--radius-md);
 
   /* --- COMPONENT TOKENS */
   /* ATOMS */
@@ -193,9 +193,6 @@
   --button-radius-sm: var(--radius-main);
   --button-radius-lg: var(--radius-main);
   --button-radius-pill: var(--radius-full);
-
-  /* Image */
-  --image-radius: var(--radius-main);
 
   /* Pre */
   --pre-radius: var(--radius-main);

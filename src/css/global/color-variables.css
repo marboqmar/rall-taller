@@ -100,7 +100,7 @@
   --heading-h3: var(--text-main);
 
   /* List */
-  --list-marker: var(--color-primary-600);
+  --list-marker: var(--color-black);
 
   /* Paragraph */
   --paragraph: var(--text-main);

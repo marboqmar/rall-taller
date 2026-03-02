@@ -1,26 +1,22 @@
 import './List.css';
 import { classNames } from '../../../utils/helpers';
 import { Icon } from '../Icon/Icon';
+import PropTypes from 'prop-types';
 
 /**
  * List component
  *
- * Component props:
- * @param {string} [className] - Additional CSS classes.
- * @param {boolean} [ordered] - Adds styling classes to display an ordered or unordered list.
- * @param {Object[]} items - Content of the list.
- * @param {string|number} items[].id - Unique identifier for React key. If none is provided, the
- * index will be used instead.
- * @param {string} items[].value - The content of the listed item (li).
- * @param {object} [rest] - Additional props passed.
+ * Supports all standard HTML ul and ol attributes via `...rest`.
  *
  * @example
+ * ```jsx
  * const listItems = [
  *   { id: 'list-first-item-id', value: 'Coffee' },
  *   { value: 'Tea' },
  * ];
  *
  * <List ordered items={listItems} />
+ * ```
  */
 
 export const List = ({ className = '', ordered, items, ...rest }) => {
@@ -48,10 +44,26 @@ export const List = ({ className = '', ordered, items, ...rest }) => {
                 <Icon className="list__bullet" href="/assets/icons/solid-circle.svg" isDecorative />
               </div>
             )}
-            <span>{item.value}</span>
+            <span className="list__value">{item.value}</span>
           </li>
         );
       })}
     </Component>
   );
+};
+
+List.propTypes = {
+  /** Additional CSS classes */
+  className: PropTypes.string,
+
+  /** If true, renders an `<ol>`, otherwise renders a `<ul>` */
+  ordered: PropTypes.bool,
+
+  /** Collection of items to display. Each item must have a 'value' (the text) and an optional 'id' for the React key. */
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      value: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };

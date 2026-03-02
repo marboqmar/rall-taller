@@ -147,6 +147,7 @@
 
   /* List */
   --list-marker-width: var(--spacing-1-5);
+  --list-bullet-size: var(--spacing-0-5);
 
   /* ORGANISMS*/
   /* Header */

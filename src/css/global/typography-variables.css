@@ -36,15 +36,7 @@
   centre the icon within it's wrapper (e.g. align checkbox to label's first line) */
   --icon-alignment-height: calc(
     var(--font-size-base) * var(--line-height-base)
-  ); /* For span, li, controls, etc. */
-
-  --icon-alignment-height-paragraph: calc(
-    var(--paragraph-font-size) * var(--paragraph-line-height)
-  ); /* For paragraphs */
-
-  --icon-alignment-height-heading: calc(
-    var(--heading-font-size-h5) * var(--heading-line-height-h5)
-  ); /* For accordion item heading */
+  ); /* For span, li, paragraph, etc. */
 }
 
 /* ==========================================================================
@@ -72,13 +64,16 @@
   --heading-font-size-h3: var(--font-size-lg);
 
   /* List */
-  --list-number-font-weight: var(--font-weight-bold);
+  --list-number-font-size: var(--font-size-base);
+  --list-number-font-weight: var(--font-weight-base);
+  --list-value-font-size: var(--font-size-base);
 
   /* Paragraph */
   --paragraph-font-family: var(--font-family-base);
   --paragraph-font-size: var(--font-size-base);
   --paragraph-line-height: var(--line-height-base);
-  --paragraph-bold: var(--font-weight-bold);
+  --paragraph-font-weight: var(--font-weight-base);
+  --paragraph-font-weight-bold: var(--font-weight-bold);
 
   /* ORGANISMS */
 

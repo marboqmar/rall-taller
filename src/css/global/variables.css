@@ -197,9 +197,6 @@
   /* Pre */
   --pre-radius: var(--radius-main);
 
-  /* Video */
-  --video-radius: var(--radius-main);
-
   /* MOLECULES */
   /* Media object */
   --media-object-radius: var(--radius-main);

@@ -1,31 +1,27 @@
 import './Image.css';
 import { classNames } from '../../../utils/helpers';
+import PropTypes from 'prop-types';
 
 /**
  * Image component
  *
- * Component props:
- * @param {string} [className] - Additional CSS classes.
- * @param {string} src - Default image source. Fallback image if srcSet is used.
- * @param {string} [srcSet] - String of different image sizes (e.g., "img-sm.jpg 400w,
- * img-lg.jpg 1200w")
- * @param {string} [sizes="100vw"] - Layout information (e.g., "(max-width: 600px) 100vw, 50vw").
- * Defaults to 100vw to avoid having to handle all the images sizes attribute manually, but highly
- * recommended for heavy images.
- * @param {string} [alt=""] - Alt text (defaults to empty string for decorative images).
- * @param {'lazy' | 'eager'} [loading="lazy"] -
- * 'lazy' (default) uses async decoding.
- * 'eager' uses sync decoding for LCP optimization.
- * @param {object} [rest] - Additional props passed.
+ * Supports all standard HTML image attributes via `...rest`.
  *
  * @example
- * // Lazy loading (default)
+ * Lazy loading (default)
+ * ```jsx
  * <Image src="/photo.png" alt="Description" />
+ * ```
+ *
  * @example
- * // Eager loading (for hero sections)
+ * Eager loading (for hero sections)
+ * ```jsx
  * <Image src="/hero.png" loading="eager" alt="Hero image description" />
+ * ```
+ *
  * @example
- * // Responsive images
+ * Responsive images
+ * ```jsx
  * <Image
  *   src="/assets/images/test-image-sm.webp"
  *   srcSet="
@@ -35,6 +31,7 @@ import { classNames } from '../../../utils/helpers';
  *   "
  *   sizes="(max-width: 768px) 100vw, 800px"
  * />
+ * ```
  */
 
 export const Image = ({
@@ -63,4 +60,25 @@ export const Image = ({
       {...rest}
     />
   );
+};
+
+Image.propTypes = {
+  /** Additional CSS classes */
+  className: PropTypes.string,
+
+  /** Default image source */
+  src: PropTypes.string.isRequired,
+
+  /** Responsive image sources (e.g., "img-400.jpg 400w, img-800.jpg 800w") */
+  srcSet: PropTypes.string,
+
+  /** Layout information for responsive images (e.g., "(max-width: 600px) 100vw, 50vw"). Defaults to 100vw, but highly recommended to set it for heavy images */
+  sizes: PropTypes.string,
+
+  /** Alt text for accessibility. Provide an empty string for decorative images. */
+  alt: PropTypes.string,
+
+  /** 'lazy' (default) for deferred loading and 'eager' for high-priority above-the-fold content.
+   */
+  loading: PropTypes.oneOf(['lazy', 'eager']),
 };

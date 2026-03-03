@@ -137,7 +137,7 @@
   /* --- COMPONENT TOKENS --- */
   /* ATOMS */
   /* Button */
-  --button-size-icon-only: var(--spacing-2-5); /* Button container size */
+  --button-size-icon-only: var(--spacing-icon-main); /* Button container size */
   --button-icon-size: var(--size-icon-main); /* Size of the icon inside the button */
 
   /* Icon */

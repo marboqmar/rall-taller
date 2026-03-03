@@ -47,9 +47,8 @@
   --hover-primary: var(--color-primary-600);
 
   /* Focus */
-  --focus-spacer: var(--page-bg);
-  --focus-ring: var(--color-gray-400);
-  --focus-glow: var(--color-gray-200);
+  --focus-ring: var(--color-primary-200);
+  --focus-glow: var(--color-primary-200);
 }
 
 /* ==========================================================================

@@ -44,6 +44,9 @@
    ========================================================================== */
 :root {
   /* --- ATOMS --- */
+  /* Button */
+  --button-font-size: var(--font-size-base);
+
   /* Heading */
   --heading-font: var(--font-family-heading);
   --heading-line-height: var(--line-height-sm);

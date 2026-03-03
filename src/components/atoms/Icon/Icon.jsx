@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
 
 export const Icon = ({
   className = '',
-  viewBox = '0 0 24 24',
+  viewBox = '0 0 48 48',
   name,
   href,
   isDecorative = false,

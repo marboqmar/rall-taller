@@ -1,70 +1,48 @@
 import './Button.css';
 import { classNames } from '../../../utils/helpers';
+import PropTypes from 'prop-types';
 
 /**
  * Button component that can render as a button or link
  *
- * Component props:
- * @param {string} [className] - Additional CSS classes.
- * @param {'primary' | 'secondary' | 'tertiary' | 'transparent'} [style] - Button styling.
- * Defaults to 'primary' for <button>.
- * @param {'sm' | 'lg'} [paddingSize] - Padding variant. Defaults to 'sm' for <button>.
- * @param {'none' | 'sm' | 'lg' | 'pill'} [borderRadius] - Border radius. Defaults to 'sm' for <button>.
- * @param {ElementType} [component="button"] - The element to render (e.g., 'button', 'a', or Link).
- * @param {boolean} [buttonAppearance] - Applies the 'button-appearance' styling class.
- * @param {'button' | 'submit' | 'reset'} [type="button"] - HTML type attribute (buttons only).
- * @param {string} [to] - Target URL if component is Link.
- * @param {string} [role] - ARIA role.
- * @param {boolean} [isExternalLink] - Opens link in a new tab with 'noopener noreferrer' for security.
- * @param {boolean} [disabled] - Disables the button and adds disabled styling.
- * @param {boolean} [hasIcon] - Adds class to style a button containing text and an icon.
- * @param {boolean} [isIconOnly] - Adds class to style a button containing only an icon.
- * @param {boolean} [isRound] - Adds class to apply circular border radius.
- * @param {string} [ariaLabel] - Required if isIconOnly. Provides the accessible name.
- * @param {node} children - Button content.
- * @param {object} [rest] - Additional props passed.
+ * Supports all standard HTML button attributes via `...rest`.
  *
  * @example
- * // Button with secondary color and large padding
- * <Button style="secondary" paddingSize="lg">Text</Button>
+ * ```jsx
+ * <Button>Text</Button>
+ * ```
  *
  * @example
- * // Link that looks like a button
+ * Link with button appearance
+ * ```jsx
  * <Button component={Link} to="/about" buttonAppearance style="primary">About</Button>
+ * ```
  *
  * @example
- * // Standard text link (not a button)
+ * Link
+ * ```jsx
  * <Button component={Link} isExternalLink to="https://...">GitHub</Button>
+ * ```
  *
  * @example
- * // Button with icon and text
- * <Button className="button-showcase__button" hasIcon>
- *   <span>Text and icon</span>
- *   <Icon isDecorative href="/assets/icons/check.svg" />
- * </Button>
- *
- * @example
- * // Icon only button
+ * Icon only button
+ * ```jsx
  * <Button isIconOnly isRound ariaLabel="Open Calendar">
  *   <Icon isDecorative href="/assets/icons/check.svg" />
  * </Button>
+ * ```
  */
 
 export const Button = ({
   className = '',
   style,
-  paddingSize,
-  borderRadius,
   component = 'button',
   buttonAppearance,
   type,
   to,
   role,
   isExternalLink,
-  disabled,
-  hasIcon,
   isIconOnly,
-  isRound,
   ariaLabel,
   children,
   ...rest
@@ -73,7 +51,7 @@ export const Button = ({
   const isButtonComponent = Component === 'button';
 
   // Apply styling default only for buttons (not links).
-  const finalStyling = isButtonComponent ? style || 'primary' : style;
+  const finalStyling = isButtonComponent & !isIconOnly ? style || 'primary' : style;
 
   // Apply link styling.
   const hasButtonAppearance = !isButtonComponent && buttonAppearance;
@@ -86,7 +64,6 @@ export const Button = ({
   const buttonProps = isButtonComponent
     ? {
         type: type || 'button',
-        disabled: disabled,
       }
     : {};
 
@@ -101,15 +78,9 @@ export const Button = ({
 
   const classes = classNames('button', className, {
     [`button--${finalStyling}`]: finalStyling,
-    'focus-like-hover': finalStyling === 'transparent',
-    [`button--padding-${paddingSize}`]: paddingSize,
-    [`button--radius-${borderRadius}`]: borderRadius,
     'button-appearance': hasButtonAppearance,
-    'button--link': notButtonAppearance,
-    'button--disabled': disabled,
-    'button--icon': hasIcon,
-    'button--icon-only': isIconOnly,
-    'button--round': isRound,
+    'button--link focus-like-hover': notButtonAppearance,
+    'button--icon-only focus-like-hover': isIconOnly,
   });
 
   return (
@@ -125,4 +96,39 @@ export const Button = ({
       {children}
     </Component>
   );
+};
+
+Button.propTypes = {
+  /** Additional CSS classes */
+  className: PropTypes.string,
+
+  /** Button styling variant. Defaults to 'primary' for `<button>` elements */
+  style: PropTypes.oneOf(['primary']),
+
+  /** The element or component to render (e.g., 'button', 'a', or Link) */
+  component: PropTypes.elementType,
+
+  /** Applies the 'button-appearance' styling class to non-button elements */
+  buttonAppearance: PropTypes.bool,
+
+  /** HTML type attribute, used only when component is 'button' */
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+
+  /** Target URL or path if component is a link */
+  to: PropTypes.string,
+
+  /** ARIA role for accessibility */
+  role: PropTypes.string,
+
+  /** If true, opens link in a new tab with 'noopener noreferrer' for security */
+  isExternalLink: PropTypes.bool,
+
+  /** Applies specific styling for buttons containing only an icon */
+  isIconOnly: PropTypes.bool,
+
+  /** Required if isIconOnly is true. Provides the accessible name for screen readers */
+  ariaLabel: PropTypes.string,
+
+  /** Button content */
+  children: PropTypes.node.isRequired,
 };

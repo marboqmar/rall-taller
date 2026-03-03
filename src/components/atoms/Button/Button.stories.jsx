@@ -3,7 +3,7 @@ import { Icon } from '../Icon/Icon';
 import { Link } from 'react-router-dom';
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Atoms/Button/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

@@ -81,9 +81,8 @@ pre {
 .card:focus-within {
   outline: none;
   box-shadow:
-    0 0 0 1px var(--focus-spacer),
-    0 0 0 2px var(--focus-ring),
-    0 0 4px 4px var(--focus-glow);
+    0 0 0 1px var(--focus-ring),
+    0 0 2px 2px var(--focus-glow);
   transition: box-shadow var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
@@ -91,31 +90,11 @@ pre {
 .focus-like-hover:hover {
   outline: none;
   box-shadow:
-    0 0 0 1px var(--focus-spacer),
-    0 0 0 2px var(--focus-ring),
-    0 0 4px 4px var(--focus-glow);
+    0 0 0 1px var(--focus-ring),
+    0 0 2px 2px var(--focus-glow);
   transition:
     box-shadow var(--motion-duration-fast) var(--motion-easing-standard),
     transform var(--motion-duration-standard) var(--motion-easing-standard);
-}
-
-/* Hover - translate */
-.translate-hover {
-  transition: transform var(--motion-duration-standard) var(--motion-easing-standard);
-}
-
-.translate-hover:hover {
-  transform: translateY(-2px);
-}
-
-/* Disabled */
-:disabled,
-.is-disabled {
-  cursor: not-allowed;
-  color: var(--disabled-text);
-  background-color: var(--disabled-bg);
-  border-color: var(--disabled-border-color);
-  border: var(--border-disabled);
 }
 
 /* Remove animations for people who've turned them off */
